@@ -31,7 +31,7 @@ document.getElementById('compare-btn').addEventListener('click', function() {
   
     console.log('Jobs:', jobs);
   
-    const response = await fetch('http://127.0.0.1:5000/schedule', {
+    const response = await fetch('https://cpu-scheduler-backend-s012.onrender.com/schedule', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ jobs: jobs })
