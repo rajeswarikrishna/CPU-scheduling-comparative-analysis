@@ -44,3 +44,7 @@ The following metrics are calculated for each algorithm:
 -> Modular and extensible design to easily add new scheduling algorithms.
 
 -> Code written in Python with clear structure and comments for academic use.
+
+**Live Demo**
+
+Try the app here: https://cpu-scheduler-frontend.onrender.com
