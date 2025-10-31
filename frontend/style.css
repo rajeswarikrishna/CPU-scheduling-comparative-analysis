@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 40px;
+    background: linear-gradient(135deg, #e0f7fa, #ffffff);
+    color: #2c3e50;
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #34495e;
+}
+
+#job-form {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+textarea, button {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+}
+
+button {
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #2c80b4;
+}
+
+#gantt-charts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#gantt-charts > div {
+    flex: 1 1 45%;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+canvas {
+    width: 100%;
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#comparison, #suggestion {
+    background: white;
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gantt-timeline {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    margin-top: 20px;
+    overflow-x: auto;
+    padding: 5px;
+}
+
+.gantt-job {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    border-right: 1px solid #fff;
+    height: 100%;
+    position: relative;
+    border-radius: 6px;
+    margin-right: 2px;
+}
+
+.gantt-label {
+    text-align: center;
+}
+
+.gantt-times {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.time-point {
+    text-align: left;
+    font-size: 12px;
+    position: relative;
+    padding: 0 5px;
+}
+
+#job-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#job-table td, #job-table th {
+    padding: 15px;
+    font-size: 16px;
+    text-align: center;
+}
+
+#job-table th {
+    background-color: #3498db;
+    color: white;
+    font-size: 18px;
+}
+
+#job-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#job-table tr:hover {
+    background-color: #ecf0f1;
+}
+
+#compare-btn {
+    margin-top: 20px;
+    width: auto;
+    display: inline-block;
+}
+/* Animation for fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInAnimation 1s forwards;
+}
+
+@keyframes fadeInAnimation {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.gantt-job {
+  animation: slideInBar 0.8s ease forwards;
+  opacity: 0;
+}
+
+@keyframes slideInBar {
+  from {
+      transform: translateX(-50px);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}

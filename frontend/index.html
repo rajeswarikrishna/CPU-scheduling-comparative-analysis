@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OS Scheduler Simulator</title>
+  <link rel="icon" href="logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+
+ 
+</head>
+<body>
+  <h1>OS Scheduler Simulator</h1>
+
+  <form id="job-form">
+    <table id="job-table" border="1" cellpadding="5" cellspacing="0">
+      <thead>
+        <tr>
+          <th>PID</th>
+          <th>Arrival Time</th>
+          <th>Burst Time</th>
+          <th>Priority</th>
+          <th>User</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="job-table-body">
+        <tr>
+          
+          <td><input type="text" name="pid"></td>
+          <td><input type="number" name="arrival"></td>
+          <td><input type="number" name="burst"></td>
+          <td><input type="number" name="priority"></td>
+          <td><input type="text" name="user"></td>
+          <td><button type="button" onclick="removeRow(this)">Remove</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <button type="button" onclick="addRow()">Add Job</button>
+    <button type="submit">Run All Schedulers</button>
+  </form>
+  
+
+  
+
+  <div id="gantt-charts">
+    
+  </div>
+
+  
+  <button id="compare-btn" style="display:none;">Compare</button>
+  <div id="comparison"></div>
+  <canvas id="line-graph" width="10" height="5"></canvas>
+  <div id="suggestion"></div>
+  
+<script>
+  function addRow() {
+  const tableBody = document.getElementById('job-table-body');
+  const newRow = document.createElement('tr');
+  newRow.innerHTML = `
+    <td><input type="text" name="pid"></td>
+    <td><input type="number" name="arrival"></td>
+    <td><input type="number" name="burst"></td>
+    <td><input type="number" name="priority"></td>
+    <td><input type="text" name="user"></td>
+    <td><button type="button" onclick="removeRow(this)">Remove</button></td>
+  `;
+  tableBody.appendChild(newRow);
+}
+
+function removeRow(button) {
+  button.parentElement.parentElement.remove();
+}
+
+</script>
+
+  <script src="script.js"></script>
+</body>
+</html>
